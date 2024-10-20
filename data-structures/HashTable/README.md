@@ -67,6 +67,7 @@ print(hash_table[26])  # Output: "dog"
 # Update a value
 hash_table[54] = "mouse"
 print(hash_table[54])  # Output: "mouse"
+```
 
 | Operation               | Average Time Complexity | Worst Time Complexity | Space Complexity |
 |-------------------------|-------------------------|-----------------------|------------------|
