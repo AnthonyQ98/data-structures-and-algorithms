@@ -69,6 +69,7 @@ hash_table[54] = "mouse"
 print(hash_table[54])  # Output: "mouse"
 ```
 
+
 | Operation               | Average Time Complexity | Worst Time Complexity | Space Complexity |
 |-------------------------|-------------------------|-----------------------|------------------|
 | **Insert (put)**         | O(1)                    | O(n)                  | O(n)             |

@@ -35,5 +35,6 @@ def main():
     print_coins(coins_used, amnt)
     print("The used list is as follows:")
     print(coins_used)
+    
 if __name__ == "__main__":
     main()
