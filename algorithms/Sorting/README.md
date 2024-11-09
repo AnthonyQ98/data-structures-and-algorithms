@@ -63,3 +63,24 @@ Shell Sort is an improvement over Insertion Sort. It breaks the list into multip
 - Key Characteristics:
     - Reduces the amount of shifting required by insertion sort.
     - Efficient for larger data sets due to initial sublist sorting.
+
+# 5. Merge Sort
+
+Merge sort is a recursive divide and conquer sorting algorithm. The base case for recursion is a list with 1 element or no elements. This is also a sorted list, by definition. The idea is recursively splitting the list until the base case is reached. Then, the 'merge' happens. Where each sublist is compared and merged together in order.
+- Time Complexity: O(n log n)
+- Key Characteristics:
+    - 
+
+# 6. Quick Sort
+
+Quick sort also approaches sorting with the divide and conquer approach, without added storage. However, if a list is not divided in half, performance is diminished. 
+
+Quick sort makes use of a 'pivot value', there is lots of ways to choose this value, but for the sake of an example, I went with the first element in the example code. The purpose of the pivot value is to help split the list. You create two pointers... left and right mark. We increment left mark until we find a value bigger than 'pivot value' and we decrement right mark until we find a value less than 'pivot value. Then exchange these two values. Then repeat the process. Once the right mark becomes less than the left mark, we can swap the right mark with the pivot value. Pivot value is now in the correct place. 
+
+The list can now be split at this split point, and quick sort can be done recursively on the left & right halves.
+
+- Time complexity: O(n log n)
+- Key characteristics:
+    - Same time complexity as merge sort but requires less memory.
+    - Can be more inefficient if the split points are not exactly in the middle and skewed to the side.
+    - In these cases, quick sort is O(n²)
