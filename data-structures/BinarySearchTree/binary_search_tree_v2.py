@@ -54,7 +54,7 @@ class TreeNode():
                 return self.left_child
             else: # has left and right child...
                 successor = self.right_child.find_min() # find min node on right subtree
-                self.value = successor.value # get the value of min 
+                self.value = successor.value # get the value of min node of right subtree
                 self.right_child = self.right_child.delete(successor.value)
         
         return self
@@ -67,6 +67,26 @@ class TreeNode():
 
 
 # traverse the tree
+    def preorder_traversal(self): # root, left, right
+        print(self.value)
+        if self.left_child:
+            self.left_child.preorder_traversal()
+        if self.right_child:
+            self.right_child.preorder_traversal()
+
+    def inorder_traversal(self): # left, root, right
+        if self.left_child:
+            self.left_child.preorder_traversal()
+        print(self.value)
+        if self.right_child:
+            self.right_child.preorder_traversal()
+
+    def postorder_traversal(self): # left, right, root
+        if self.left_child:
+            self.left_child.preorder_traversal()
+        if self.right_child:
+            self.right_child.preorder_traversal()
+        print(self.value)
 
 
 
@@ -106,6 +126,12 @@ def main():
     print(tree.search(32)) # no longer found in the tree
 
     print(tree.right_child.right_child.value) # was 32... but we deleted it, so should now be 31.
+
+    tree.preorder_traversal()
+
+    tree.inorder_traversal()
+
+    tree.postorder_traversal()
  
 
 if __name__ == "__main__":
