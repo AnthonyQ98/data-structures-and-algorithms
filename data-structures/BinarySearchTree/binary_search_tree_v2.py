@@ -36,11 +36,37 @@ class TreeNode():
         else:
             return self
 
-# traverse the tree
-
-
-
 # delete from the tree
+    def delete(self, value):
+        if self.value is None:
+            return self
+        
+        if value < self.value: # find the value
+            self.left_child = self.left_child.delete(value)
+        elif value > self.value:
+            self.right_child = self.right_child.delete(value)
+        else: # found the value, perform delete
+            if self.left_child is None and self.right_child is None: # no children
+                return None
+            elif self.left_child is None: # right child only
+                return self.right_child
+            elif self.right_child is None: # left child only
+                return self.left_child
+            else: # has left and right child...
+                successor = self.right_child.find_min() # find min node on right subtree
+                self.value = successor.value # get the value of min 
+                self.right_child = self.right_child.delete(successor.value)
+        
+        return self
+
+    def find_min(self):
+        current = self
+        while current.left_child is not None: # keep going left
+            current = current.left_child
+        return current # returns left most node
+
+
+# traverse the tree
 
 
 
@@ -74,6 +100,12 @@ def main():
     print(tree.search(32).value) # is in the tree, print the value for this node.
 
     print(tree.search(7)) # not in the tree... should print None
+
+    print(tree.delete(32))
+
+    print(tree.search(32)) # no longer found in the tree
+
+    print(tree.right_child.right_child.value) # was 32... but we deleted it, so should now be 31.
  
 
 if __name__ == "__main__":
