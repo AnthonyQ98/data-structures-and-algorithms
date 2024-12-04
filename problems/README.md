@@ -1,4 +1,4 @@
-# Notes FOR PROBLEMS:
+# Notes:
 
 
 Recursion laws
